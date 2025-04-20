@@ -27,5 +27,3 @@ Key Object Detection: Unifying Salient and Camouflaged Object Detection into One
 ![alt text](./images/image-1.png)
 3. Visualization of the predicted results are presented in three groups.
 ![alt text](./images/image-2.png)
-
-## More details will be released later...

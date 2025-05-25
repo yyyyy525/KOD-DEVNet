@@ -22,13 +22,13 @@ Key Object Detection: Unifying Salient and Camouflaged Object Detection into One
 
 ## Results
 
-**Evaluation.** You can download the pre-trained model weights via this [link](). Then, please update the `--pth_path` parameter in the MyTesting.py file to point to the downloaded weights, and finally run MyTesting.py to evaluate the model.
+**Evaluation.** You can download the pre-trained model weights via this link: [Baidu | Fetch code: i4m9](https://pan.baidu.com/s/15OsMmxdI2w4Y1p2ynZM--Q). Then, please update the `--pth_path` parameter in the MyTesting.py file to point to the downloaded weights, and finally run MyTesting.py to evaluate the model.
 
 1. Performance comparison with benchmark SOD models. The best scores were marked red, followed by green and blue.
 ![alt text](./images/image.png)
 2. Performance comparison with benchmark COD models. The best scores were marked red, followed by green and blue.
 ![alt text](./images/image-1.png)
-3. Visualization of the predicted results are presented in three groups.
+3. Visualization of the predicted results is presented in three groups.
 ![alt text](./images/image-2.png)
 
 ## Citation

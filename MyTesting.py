@@ -27,7 +27,7 @@ for _data_name in [ 'COD10K', 'CAMO', 'CHAMELEON', 'NC4K' ]:
     color_save_path = './res/{}/pred_score/'.format(_data_name)
     model = Hitnet()
     model.cuda()
-    # model = torch.nn.DataParallel(model)
+    model = torch.nn.DataParallel(model)
     model.load_state_dict(torch.load(opt.pth_path))
     model.eval()                
 

@@ -1,7 +1,7 @@
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-from DVNet.lib.pvtv2 import pvt_v2_b2
+from lib.pvtv2 import pvt_v2_b2
 import os
 import torch
 import torch.nn as nn
@@ -124,6 +124,15 @@ class SAM(nn.Module):
             nn.Linear(ch_in // reduction, 1, bias=False),
             nn.Sigmoid()
         )
+        # self.normalize = normalize
+        # self.num_s = int(plane_mid)
+        # self.num_n = (mids) * (mids)
+        # self.priors = nn.AdaptiveAvgPool2d(output_size=(mids + 2, mids + 2))
+        #
+        # self.conv_state = nn.Conv2d(num_in, self.num_s, kernel_size=1)
+        # self.conv_proj = nn.Conv2d(num_in, self.num_s, kernel_size=1)
+        # self.gcn = GCN(num_state=self.num_s, num_node=self.num_n)
+        # self.conv_extend = nn.Conv2d(self.num_s, num_in, kernel_size=1, bias=False)
 
     def forward(self, x_h, x_l):
         #print('x_h shape, x_l shape,',x_h.shape, x_l.shape)
@@ -483,20 +492,20 @@ class Hitnet(nn.Module):
         ####
         # CFM
         # cod
-        x2_t = self.Translayer2_1_c(x2)
-        x3_t = self.Translayer3_1_c(x3) 
+        x2_t = self.Translayer2_1_c(x2)#####channel=32
+        x3_t = self.Translayer3_1_c(x3) ####channel=32
         x4_t = self.Translayer4_1_c(x4)
         ## uni
-        y2_t = self.Translayer2_1_u(x2)  
-        y3_t = self.Translayer3_1_u(x3) 
+        y2_t = self.Translayer2_1_u(x2)  #####channel=32
+        y3_t = self.Translayer3_1_u(x3)  ####channel=32
         y4_t = self.Translayer4_1_u(x4)
         ## sod
-        z2_t = self.Translayer2_1_s(x2) 
-        z3_t = self.Translayer3_1_s(x3)  
+        z2_t = self.Translayer2_1_s(x2)  #####channel=32
+        z3_t = self.Translayer3_1_s(x3)  ####channel=32
         z4_t = self.Translayer4_1_s(x4)
         # 多分类语义分割分支
-        n2_t = self.Translayer2_1(x2)
-        n3_t = self.Translayer3_1(x3) 
+        n2_t = self.Translayer2_1(x2)#####channel=32
+        n3_t = self.Translayer3_1(x3) ####channel=32
         n4_t = self.Translayer4_1(x4)
 
 ####stage 1--------------------------------------------------
